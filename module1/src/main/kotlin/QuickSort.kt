@@ -9,13 +9,13 @@ fun <T : Comparable<T>> quickSort(items: List<T>): List<T> {
     val equal = items.filter { it == pivot }
     val less = items.filter { it < pivot }
     val greater = items.filter { it > pivot }
-   return quickSort(less) + equal + quickSort(greater)
-  //  return quickSort(less) + quickSort(greater)
+    return quickSort(less) + equal + quickSort(greater)
+    //  return quickSort(less) + quickSort(greater)
 }
 
 fun main() {
     println("Before quicksort:")
-    val numbers  = List(10) { Random.nextInt(0, 100) }
+    val numbers = List(10) { Random.nextInt(0, 100) }
     println(numbers.getStringRepresentation())
     println("After quicksort:")
     println(quickSort(numbers).getStringRepresentation())
